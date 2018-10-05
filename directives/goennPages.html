@@ -1,0 +1,44 @@
+<md-content>
+    <a ng-click="clicked = ! clicked">
+        <md-list ng-if="!collapsed" flex>
+            <md-list-item class="md-2-line" ng-class="{'active': clicked}">
+                <md-icon class="pageIcon" style="color:{{content.ambient}};">
+                    {{content.icon}}
+                </md-icon>
+                <div class="md-list-item-text">
+                    <h3 ng-hide="clicked">{{content.headline}}
+                    <span class="insideTitle" ng-show="clicked">
+                        <h3>{{content.headline}}</h3>
+                    </span>
+                        <p ng-hide="clicked">{{content.author}}</p>
+                </div>
+            </md-list-item>
+        </md-list>
+    </a>
+    <md-card class="fade" ng-show="clicked" flex style="background-color:{{content.ambient}};color:{{content.ambientColor}};">
+        <a ng-click="clicked = ! clicked">
+            <img ng-src="{{content.image}}" class="md-card-image" alt="{{content.imageAlt}}">
+        </a>
+        <md-card-actions layout="row" layout-align="center center">
+            <md-button class="md-icon-button" aria-label="Share">
+                <md-icon style="color:{{content.ambientColor}} !important;" >menu</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+                <md-icon style="color:{{content.ambientColor}} !important;" >share_arrow</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+                <md-icon style="color:{{content.ambientColor}} !important;" >star_rate</md-icon>
+            </md-button>
+        </md-card-actions>
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{content.headline}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <p>
+                {{content.text}}
+            </p>
+        </md-card-content>
+    </md-card>
+</md-content>

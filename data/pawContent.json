@@ -1,0 +1,72 @@
+[
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"die ersten Schritte mit AngularJS",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Martin Meier"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Wir definieren einen Kontroller",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Peter St. Lois"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Wir erstellen eine Direktive",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Chester Maker"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Wir verpassen dem ganzen ein Gesicht",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Maximilian Loger"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Die App Lokal testen",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Peter Fischer"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Der erste Service",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Chris Glanz"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Was sind Apis?",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Chris Glanz"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Shake it! Angular und Animationen",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Chris Glanz"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Wir erstellen ein Backend",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Chris Glanz"
+  },
+  {
+    "image":"http://lorempixel.com/222/444",
+    "title":"Wir machen aus unserer Arbeit ein CMS!",
+    "content":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+    "footer":"copyright 2018",
+    "author": "Chris Glanz"
+  }
+]

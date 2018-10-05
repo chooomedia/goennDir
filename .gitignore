@@ -1,0 +1,9 @@
+/node_modules
+/dist
+/data/img
+/.vcode
+/.tmp
+/.sass-cache
+/bower_components
+npm-debug.log
+style.scss

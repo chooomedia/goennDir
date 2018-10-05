@@ -1,0 +1,98 @@
+<html lang="de" ng-app="goennDir">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Angular Material style sheet -->
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <title>{{title}}</title>
+    <script>
+        document.write('<base href="' + document.location + '" />');
+    </script>
+    <link type="text/css" href="style.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Lily+Script+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
+</head>
+
+<body ng-model="main" ng-cloak ng-controller="goennController">
+<div layout="column" layout-filling>
+    <header class="blurred-box">
+        <md-toolbar layout="row" flex>
+            <img ng-src="{{logo.url}}" alt="{{logo.title}}" class="md-logo md-avatar">
+            <md-menu-bar layout="row" layout-align="start center">
+                <md-menu ng-repeat="link in links" ng-hide="clicker">
+                    <button style="color:#FFF!important;" ng-click="$mdMenu.open()">
+                        {{link.title}}
+                    </button>
+                    <md-menu-content ng-hide="!link.step">
+                        <md-menu-item type="checkbox" ng-model="settings.allowChanges">{{ link.step }}</md-menu-item>
+                    </md-menu-content>
+                </md-menu>
+            </md-menu-bar>
+        </md-toolbar>
+    </header>
+
+    <!-- Search bar -->
+    <div class="md-toolbar-tools" layout="row" id="paw-search">
+        <md-button class="md-icon-button" ng-click="getData()">
+            <md-icon>search</md-icon>
+        </md-button>
+        <!-- Input Text -->
+        <md-input-container layout="row" class="paw-search-input">
+            <!-- <label for="search">Search</label> -->
+            <input type="text" ng-model="searchField" aria-label="search"/>
+        </md-input-container>
+        <md-button class="md-icon-button" ng-click="clearInput()">
+            <md-icon>close</md-icon>
+        </md-button>
+    </div>
+    </md-menu-content>
+
+    <div class="main" scroll>
+        <section class="landingpage" layout="row" flex ng-repeat="page in pages">
+            <app-page content="page"></app-page>
+        </section>
+
+        <!-- md-content layout="row" ng-view ng-show="collapsed">
+            <md-content ng-repeat="item in main" class="slide md-padding" flex="66" flex-xs="100">
+                <h1>{{item.title}}</h1>
+                <p>{{item.content}}</p>
+            </md-content>
+            <md-content layout="column" ng-show="images">
+                <md-content ng-repeat="image in images" class="slide md-padding" flex="33" flex-xs="100">
+                    <md-card layout-align="center center" style="margin:0!important;">
+                        <md-card-header>{{image}}</md-card-header>
+                        <md-card-content>
+                            <img ng-src="{{image}}" alt="{{images.title}}">
+                        </md-card-content>
+                    </md-card>
+                </md-content>
+            </md-content>
+            <div ng-repeat="box in boxes" class="slide md-padding" flex="33" flex-xs="100">
+                <app-box info="box"></app-box>
+            </div>
+        </md-content> -->
+    </div>
+</div>
+
+<!-- Angular Material requires Angular.js Libraries -->
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-animate.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-aria.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-messages.min.js"></script>
+
+<!-- Angular Material Library -->
+<script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.js"></script>
+
+<!-- Modules -->
+<script src="app.js"></script>
+
+<!-- Services -->
+<!-- Angular Controller -->
+<script src="controllers/goennController.js"></script>
+
+<!-- Angular Directives -->
+<script src="directives/goennBoxes.js"></script>
+<script src="directives/goennPages.js"></script>
+
+</body>
+</html>

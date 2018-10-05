@@ -1,0 +1,102 @@
+[
+    {
+      "ambientColor": "rgba(0,0,0,0.7)",
+      "ambient": "lightgrey",
+      "image":"data/img/1.jpg",
+      "icon":"gavel",
+      "headline":"die ersten Schritte mit AngularJS",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Martin Meier"
+    },
+    {
+      "ambientColor": "rgba(0,0,0,0.7)",
+      "ambient": "orange",
+      "image":"data/img/2.png",
+      "icon":"build",
+      "headline":"Wir definieren einen Kontroller",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Peter St. Lois"
+    },
+    {
+      "ambientColor": "rgba(0,0,0,0.7)",
+      "ambient": "gold",
+      "image":"data/img/3.png",
+      "icon":"extension",
+      "headline":"Wir erstellen eine Direktive",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Chester Maker"
+    },
+    {
+      "ambientColor": "rgba(255,255,255,0.7)",
+      "ambient": "blue",
+      "image":"data/img/4.png",
+      "icon":"http",
+      "headline":"Wir verpassen dem ganzen ein Gesicht",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Maximilian Loger"
+    },
+    {
+      "ambientColor": "rgba(255,255,255,0.7)",
+      "ambient": "purple",
+      "image":"data/img/5.png",
+      "icon":"today",
+      "headline":"Die App Lokal testen",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Peter Fischer"
+    },
+    {
+      "ambientColor": "rgba(255,255,255,0.7)",
+      "ambient": "deepblue",
+      "image":"data/img/4.png",
+      "icon":"airplay",
+      "headline":"Der erste Service",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Chris Glanz"
+    },
+    {
+      "ambientColor": "rgba(255,255,255,0.7)",
+      "ambient": "red",
+      "image":"data/img/3.png",
+      "icon":"shuffle",
+      "headline":"Was sind Apis?",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Chris Glanz"
+    },
+    {
+      "ambientColor": "rgba(255,255,255,0.7)",
+      "ambient": "apple",
+      "image":"data/img/2.png",
+      "icon":"format_italic",
+      "headline":"Shake it! Angular und Animationen",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Chris Glanz"
+    },
+    {
+      "ambientColor": "rgba(255,255,255,0.7)",
+      "ambient": "green",
+      "image":"data/img/1.jpg",
+      "icon":"graphic_eq",
+      "headline":"Wir erstellen ein Backend",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Chris Glanz"
+    },
+    {
+      "ambientColor": "rgba(0,0,0,0.7)",
+      "ambient": "orange",
+      "image":"data/img/3.png",
+      "icon":"pie_chart",
+      "headline":"Wir machen aus unserer Arbeit ein CMS!",
+      "text":"At vero eos et accusam et justo duo doAt vero eos et accusam et justo duo do",
+      "footer":"copyright 2018",
+      "author": "Chris Glanz"
+    }
+  ]

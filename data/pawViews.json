@@ -1,0 +1,21 @@
+[
+  {
+    title: "Home",
+    pathTo: "/"
+  },
+  {
+    title: "Bio",
+    step: "Über uns",
+    pathTo: "/" + this.title
+  },
+  {
+    title: "Album",
+    step: "Impressionen",
+    pathTo: "/" + this.title
+  },
+  {
+    title: "Karte",
+    step: "Wie sie uns finden",
+    pathTo: "/" + this.title
+  }
+]

@@ -1,0 +1,29 @@
+<md-card id="mainCards" class="md-padding" ng-controller="pawController">
+  <md-chips>
+    <md-chip>{{ info.author }}</md-chip>
+  </md-chips>
+    <md-card-title>
+        <md-card-title-text>
+            <span class="md-headline">{{ info.title }}</span>
+            <span class="md-subhead">{{ info.content}}</span>
+        </md-card-title-text>
+    </md-card-title>
+
+    <md-card-content layout="row" layout-align="space-between">
+        <!-- <div ng-repeat="image in images">
+            <img flex="80" ng-src="{{ image }}" class="card-media"/>
+        </div> -->
+            <img flex="100" height="*" ng-src="{{ info.image }}" class="card-media"/>
+        <md-card-actions layout="column">
+            <md-button class="md-icon-button">
+                <md-icon> favorite</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Settings">
+                <md-icon> menu</md-icon>
+            </md-button>
+            <md-button class="md-icon-button" aria-label="Share">
+                <md-icon> share_arrow</md-icon>
+            </md-button>
+        </md-card-actions>
+    </md-card-content>
+</md-card>
