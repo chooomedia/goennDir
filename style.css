@@ -176,9 +176,9 @@ body {
   body md-toolbar {
     position: fixed; }
     body md-toolbar .md-logo {
-      margin: 12px 0 12px 17px;
-      width: 180px;
-      height: 43px; }
+      margin: 13px 0 7px 17px;
+      width: 182px;
+      height: 38px; }
   body #mainCards {
     margin: 0 auto; }
   body md-content {
