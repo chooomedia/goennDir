@@ -1,8 +1,5 @@
-<!DOCTYPE html>
-<html lang="de" data-ng-app="goennDir" >
+<html lang="de" ng-app="goennDir" ng-cloak>
 <head>
-    <meta content="favicon.png" itemprop="image">
-    <link href=favicon.ico" rel="shortcut icon">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Angular Material style sheet -->
@@ -24,9 +21,9 @@
             <div class="goennDirStyle" back-img="data/img/goenndir-style-right.png"></div>
             <img ng-src="{{logo.url}}" alt="{{logo.title}}" class="md-logo md-avatar">
             <md-menu-bar layout="row" layout-align="start center">
-                <md-menu layout="column" layout-align="start end" ng-repeat="link in links" ng-hide="clicker">
-                    <button style="color:#FFF!important;" ng-click="$mdMenu.open()">
-                        {{link.title}}
+                <md-menu layout="column" layout-align="start end" ng-hide="clicker">
+                    <button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
+                        <md-icon class="menuButton" style="color:#FFF!important;" >menu</md-icon>
                     </button>
                     <md-menu-content ng-hide="!link.step">
                         <md-menu-item type="checkbox" ng-model="settings.allowChanges">{{ link.step }}</md-menu-item>
@@ -34,6 +31,29 @@
                 </md-menu>
             </md-menu-bar>
         </md-toolbar>
+
+        <section layout="row">
+            <md-sidenav
+            style="margin-top: 134px;"
+            class="md-sidenav-left"
+            md-component-id="left"
+            md-is-locked-open="$mdMedia('gt-md')"
+            md-whiteframe="4">
+
+            <md-toolbar class="md-theme-indigo goennSideNav" style="height: 67px;background-color: rgba(0,0,0,0.1) !important;">
+            </md-toolbar>
+            <md-content layout-padding ng-controller="LeftCtrl">
+                <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                Close Sidenav Left
+                </md-button>
+                <p hide show-gt-md>
+                This sidenav is locked open on your device. To go back to the default behavior,
+                narrow your display.
+                </p>
+            </md-content>
+
+        </md-sidenav>
+        </section>
 
         <div class="goennShopInfo">
             <md-button>
@@ -43,6 +63,7 @@
             <p>{{shopName}}</p>
         </div>
     </header>
+
 
     <!-- Search bar -->
     <div class="md-toolbar-tools goennLoader {{isLoading}}" layout="row" id="goennSearch" back-img="data/img/goenndir-style-left.png">
