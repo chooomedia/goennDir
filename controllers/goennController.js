@@ -80,7 +80,7 @@ app.controller('goennController', [
             $scope.contentLoadedGo = false;
             $scope.clearInputclicked = true;
             $scope.searchField = '';
-            $scope.newVal = 'Suche z.B. nach E-Bike günstig';
+            $scope.newVal = 'Suche z.B. nach E-Bike preiswert';
         }
 
         $scope.$on(

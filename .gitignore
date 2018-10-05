@@ -1,7 +1,7 @@
 /node_modules
 /dist
 /data/img
-/.vcode
+/.vscode
 /.tmp
 /.sass-cache
 /bower_components
