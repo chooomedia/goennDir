@@ -17,9 +17,9 @@
 <body ng-model="main" ng-cloak ng-controller="goennController">
 <div layout="column" layout-filling>
     <header>
-        <md-toolbar layout="row" id="goenndirnav" flex>
+        <md-toolbar layout="column" id="goenndirnav" flex>
             <div class="goennDirStyle" back-img="data/img/goenndir-style-right.png"></div>
-            <img ng-src="{{logo.url}}" alt="{{logo.title}}" class="md-logo md-avatar">
+            <img ng-click="toggleLeft()" ng-src="{{logo.url}}" alt="{{logo.title}}" class="md-logo md-avatar">
             <md-menu-bar layout="row" layout-align="start center">
                 <md-menu layout="column" layout-align="start end" ng-hide="clicker">
                     <button ng-click="toggleLeft()" class="md-primary" hide-gt-md>
@@ -64,22 +64,21 @@
         </div>
     </header>
 
-
     <!-- Search bar -->
     <div class="md-toolbar-tools goennLoader {{isLoading}}" layout="row" id="goennSearch" back-img="data/img/goenndir-style-left.png">
-            <span class="goennLoaderCircle" ng-hide="!contentLoadedGo" style="
-                background: url(./data/img/loader.gif);
-                background-repeat: no-repeat;
-                background-size: contain;
-                width: 54px;
-                margin: 0 auto;
-                height: 54px;
-                filter: invert(0.78);
-                border-radius: 27px !important;
-                position: absolute;
-                left: 2px;">
-            </span>
-        <md-button style="margin: 0 17px 0 -7px;padding: 0 9px 0 3px;" class="md-icon-button" ng-click="getData(); contentLoadedGo=!contentLoadedGo" aria-label="search">
+        <span class="goennLoaderCircle" ng-hide="!contentLoadedGo" style="
+            background: url(./data/img/loader.gif);
+            background-repeat: no-repeat;
+            background-size: contain;
+            width: 54px;
+            margin: 0 auto;
+            height: 54px;
+            filter: invert(0.78);
+            border-radius: 27px !important;;
+            position: absolute;
+            left: 2px;">
+        </span>
+        <md-button style="margin: 0 17px 0 -5px;padding: 0 9px 0 3px;" class="md-icon-button" ng-click="getData(); contentLoadedGo=!contentLoadedGo" aria-label="search">
             <md-icon ng-if="!contentLoadedGo">search</md-icon>
             <md-icon ng-if="contentLoadedGo">close</md-icon>
         </md-button>
@@ -98,9 +97,8 @@
             <md-icon>close</md-icon>
         </md-button>
     </div>
-    </md-menu-content>
 
-    <div class="main" scroll>
+    <div class="main">
         <section class="landingpage" layout="row" flex ng-repeat="page in pages">
             <app-page content="page"></app-page>
         </section>

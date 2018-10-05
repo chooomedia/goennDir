@@ -90,12 +90,12 @@ app.controller('goennController', [
                 $scope.serverStatus = serverStati = response.data.data;
 
                 if (serverStati.status == 'FINISHED' || serverStati.status == 'FERTIG') {
+                    $scope.contentLoadedGo = false;
                     finishedContinuation(serverStati);
-                    $scope.contentLoading = true;
                 } else {
-                    $scope.contentLoading = false;
                     $timeout(() => {
                         $scope.waitServerStatus(_KEY, jobID, finishedContinuation);
+                        $scope.contentLoadedGo = true;
                     }, 5000);
                 }
             })
