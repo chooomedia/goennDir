@@ -6,6 +6,7 @@ body {
     position: absolute;
     height: 67px; }
     body #goenndirnav .md-logo {
+      cursor: pointer;
       position: fixed;
       margin: 14px 7px;
       width: 180px;
@@ -222,7 +223,6 @@ body {
   .goennDirStyle {
     background-size: cover; }
   .md-logo {
-    cursor: pointer;
     top: 0;
     left: 49px !important;
     max-width: 160px;
