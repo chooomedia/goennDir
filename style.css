@@ -2,37 +2,109 @@ body {
   font-family: 'Arimo', sans-serif;
   font-family: 'Lily Script One', cursive;
   font-family: 'Arimo', sans-serif; }
-  body md-menu-bar button {
-    font-family: 'Lily Script One';
-    font-size: 22px; }
-  body md-menu-bar #search-bar {
-    margin-top: 15px;
-    margin-left: 10px;
-    color: #FFF !important; }
-  body md-menu-bar #search-bar-active, body md-menu-bar .search-bar {
-    color: #FFF !important;
-    background: transparent;
-    overflow: hidden; }
-    body md-menu-bar #search-bar-active button md-icon, body md-menu-bar .search-bar button md-icon {
-      color: #FFF !important; }
-    body md-menu-bar #search-bar-active input, body md-menu-bar .search-bar input {
-      margin-top: 14px; }
-  body md-menu-bar md-menu {
-    font-display: initial; }
-    body md-menu-bar md-menu button span {
-      font-size: 14px;
-      text-transform: lowercase; }
-    body md-menu-bar md-menu button.searchButton {
-      color: #FFF !important; }
-      body md-menu-bar md-menu button.searchButton md-icon {
+  body #goenndirnav {
+    height: 67px; }
+    body #goenndirnav .md-logo {
+      margin: 14px;
+      width: 180px;
+      height: 38.5px;
+      left: 12px;
+      z-index: 2; }
+    body #goenndirnav .goennSideNav {
+      height: 67px;
+      background: rgba(0, 0, 0, 0.3) !important; }
+    body #goenndirnav .goennDirStyle {
+      background-color: rgba(44, 44, 44, 0.85);
+      background-position-x: 100%;
+      background-repeat: no-repeat;
+      filter: saturate(2);
+      width: 100%;
+      position: fixed;
+      z-index: 2 !important;
+      height: 67px;
+      transition: all .9s; }
+      body #goenndirnav .goennDirStyle:hover {
+        filter: saturate(4); }
+    body #goenndirnav md-menu-bar .menuButton {
+      top: unset;
+      color: #FFF !important;
+      position: relative; }
+    body #goenndirnav md-menu-bar button {
+      font-family: 'Lily Script One';
+      font-size: 22px; }
+    body #goenndirnav md-menu-bar #goennSearch #search-bar-active, body #goenndirnav md-menu-bar #goennSearch .search-bar {
+      color: #FFF !important;
+      background: transparent;
+      overflow: hidden; }
+      body #goenndirnav md-menu-bar #goennSearch #search-bar-active button md-icon, body #goenndirnav md-menu-bar #goennSearch .search-bar button md-icon {
         color: #FFF !important; }
-  body #paw-search {
-    background: rgba(255, 255, 255, 0.2) !important;
-    padding: 0 1em; }
-    body #paw-search .paw-search-input {
+      body #goenndirnav md-menu-bar #goennSearch #search-bar-active input, body #goenndirnav md-menu-bar #goennSearch .search-bar input {
+        margin-top: 14px; }
+    body #goenndirnav md-menu-bar #goennSearch md-menu {
+      font-display: initial; }
+      body #goenndirnav md-menu-bar #goennSearch md-menu button span {
+        font-size: 14px;
+        text-transform: lowercase; }
+      body #goenndirnav md-menu-bar #goennSearch md-menu button.searchButton {
+        color: #FFF !important; }
+        body #goenndirnav md-menu-bar #goennSearch md-menu button.searchButton md-icon {
+          color: #FFF !important; }
+  body .goennShopInfo {
+    padding: 0 12px 0 2px;
+    background-color: rgba(48, 48, 48, 0.85);
+    display: inline-flex;
+    margin: 6px auto;
+    right: 2px;
+    position: fixed;
+    z-index: 999;
+    height: 54px;
+    line-height: 54px;
+    border-radius: 30px;
+    top: -1px; }
+    body .goennShopInfo .md-button {
+      margin: 0 auto !important;
+      min-width: unset !important; }
+    body .goennShopInfo p {
+      line-height: 22px; }
+  body #goennSearch {
+    box-sizing: border-box;
+    padding: 0 1em;
+    height: 67px;
+    max-height: 67px;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.6); }
+    body #goennSearch p {
+      font-family: 'Lily Script One';
+      color: rgba(255, 255, 255, 0.95); }
+    body #goennSearch .goennSearchInput {
+      font-family: 'Lily Script One';
       width: 100%; }
-      body #paw-search .paw-search-input input {
+      body #goennSearch .goennSearchInput input {
         font-family: 'Lily Script One'; }
+    body #goennSearch .goennLoaderCircle {
+      background-repeat: no-repeat;
+      background-size: contain;
+      width: 54px;
+      margin: 0 auto;
+      height: 54px;
+      filter: invert(0.78);
+      border-radius: 41px !important;
+      position: absolute;
+      left: 2px; }
+
+@keyframes image_blur {
+  0%, 100% {
+    -webkit-filter: saturate(0.5);
+    animation-timing-function: ease-in; }
+  50% {
+    -webkit-filter: saturate(3);
+    animation-timing-function: ease-in-out; } }
+    body #goennSearch.goennLoader.active {
+      clear: both;
+      animation: image_blur 8s;
+      animation-iteration-count: infinite;
+      animation-direction: reverse;
+      transition: all .3s; }
   body md-list-item .active {
     border: 1pix solid rgba(255, 255, 255, 0.5); }
   body md-card {
@@ -75,31 +147,6 @@ body {
     opacity: 1; }
   to {
     opacity: 0; } }
-  body .blurred-box {
-    position: relative;
-    width: 100%;
-    height: 66px;
-    background: inherit;
-    top: calc(50%);
-    left: 0;
-    border-radius: 2px;
-    overflow: hidden;
-    z-index: 1;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
-  body .blurred-box:after {
-    content: '';
-    width: 108%;
-    height: 66px;
-    overflow: hidden;
-    background: inherit;
-    position: fixed;
-    left: -20px;
-    right: 0;
-    top: -20px;
-    bottom: 0;
-    z-index: 1;
-    box-shadow: inset 0 0 0 200px rgba(0, 0, 0, 0.5);
-    filter: blur(10px); }
   body md-toolbar {
     color: #fff;
     z-index: 2;
@@ -127,12 +174,6 @@ body {
     font-size: 14px; }
   body .topInput label {
     color: #000000; }
-  body md-toolbar {
-    position: fixed; }
-    body md-toolbar .md-logo {
-      margin: 12px 0 12px 17px;
-      width: 180px;
-      height: 43px; }
   body #mainCards {
     margin: 0 auto; }
   body md-content {
@@ -146,3 +187,21 @@ body {
   body .checkBoxTop {
     line-height: 40px;
     font-size: 14px; }
+
+/* Media Querys for responsive Smartphone Views */
+@media only screen and (max-width: 599px) {
+  .goennDirStyle {
+    background-size: cover; }
+  .md-logo {
+    top: 0;
+    left: 49px !important;
+    max-width: 160px;
+    max-height: 49px;
+    position: fixed; }
+  body #goenndirnav md-menu-bar .menuButton {
+    position: fixed !important;
+    top: 23px;
+    left: 16px; }
+  .md-toolbar-tools {
+    height: 67px;
+    max-height: 67px; } }
