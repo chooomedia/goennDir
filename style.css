@@ -2,6 +2,8 @@ body {
   font-family: 'Arimo', sans-serif;
   font-family: 'Lily Script One', cursive;
   font-family: 'Arimo', sans-serif; }
+  body h3 {
+    font-family: 'Lily Script One'; }
   body #goenndirnav {
     position: absolute;
     height: 67px; }

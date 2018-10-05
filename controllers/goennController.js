@@ -103,11 +103,10 @@ app.controller('goennController', [
         }
 
         $scope.downloadProductFile = (serverStati) => {
-            $scope.isLoading = '';
+            
             console.log(serverStati.download_link);
             if (serverStati.download_link) {
-
-                $scope.contentLoading = true;
+                return $scope.contentLoadedGo = false;
                 $http.get(serverStati.download_link)
                     .then(function(data) {
                         console.log(data);

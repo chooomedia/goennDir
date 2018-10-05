@@ -1,4 +1,4 @@
-<html lang="de" ng-app="goennDir">
+<html lang="de" ng-app="goennDir" ng-cloak>
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -14,7 +14,8 @@
     <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 </head>
 
-<body ng-model="main" ng-cloak ng-controller="goennController">
+<body ng-model="main" ng-controller="goennController">
+
 <div layout="column" layout-filling>
     <header>
         <md-toolbar layout="column" id="goenndirnav" flex>
@@ -43,9 +44,9 @@
             <md-toolbar class="md-theme-indigo goennSideNav" style="height: 67px;background-color: rgba(0,0,0,0.1) !important;">
             </md-toolbar>
             <md-content layout-padding ng-controller="LeftCtrl">
-                <md-button ng-click="close()" class="md-primary" hide-gt-md>
+                <button ng-click="close()" class="md-primary" hide-gt-md>
                 Close Sidenav Left
-                </md-button>
+                </button>
                 <p hide show-gt-md>
                 This sidenav is locked open on your device. To go back to the default behavior,
                 narrow your display.
@@ -71,7 +72,7 @@
             background-repeat: no-repeat;
             background-size: contain;
             width: 54px;
-            margin: 0 auto;
+            margin: -1px auto;
             height: 54px;
             filter: invert(0.78);
             border-radius: 27px !important;;
@@ -93,13 +94,13 @@
                 <p ng-show="clearInputclicked">{{newVal}}</p>
             </span>
         </md-input-container>
-        <md-button class="md-icon-button" ng-click="clearInput(); cancelBuilderServer()">
+        <button class="md-icon-button" ng-click="clearInput(); cancelBuilderServer()">
             <md-icon>close</md-icon>
-        </md-button>
+        </button>
     </div>
 
     <div class="main">
-        <section class="landingpage" layout="row" flex ng-repeat="page in pages">
+        <section class="landingpage" layout="row" ng-repeat="page in pages" layout-wrap>
             <app-page content="page"></app-page>
         </section>
 
