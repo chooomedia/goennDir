@@ -2,47 +2,100 @@ app.controller('goennController', [
     '$scope',
     '$filter',
     '$http',
+    '$timeout',
     '$window',
-    '$anchorScroll',
     '$location',
-    'pawService', function (
+    'goennService', function (
         $scope,
         $filter,
         $http,
+        $timeout,
         $window,
-        $anchorScroll,
         $location,
-        pawService) {
+        goennService) {
 
-        $scope.searchField = "";
-
+        $scope.searchField = "Suche z.B. nach Festival";
 
         wishAuthService =  function() {
             $http.post('https://merchant.wish.com/api/v2/auth_test?access_token=d4c7fbfd7ee448dd82a744a09029bacd')
-                .then(function (data) {
-                    console.log(data);
+                .then(function(data) {
+                    console.log(data.data.data);
+                    $scope.shopName = data.data.data.merchant_username;
                 });
         }
-
-        $scope.getData = function (searchField) {
-            let _KEY = 'd4c7fbfd7ee448dd82a744a09029bacd';
-            
-            $http.get('https://merchant.wish.com/api/v2/product/multi-get', {
-                    start: '20',
-                    limit: '2',
-                    since: '2014-10-15',
-                    upto:  '2018-09-01T01:00:00',
-                    access_token: _KEY
-            })
-                .then(function (data) {
-                    console.log(data);
-                });
-        };
-
         wishAuthService();
 
+        /**
+         * This function waits until the Wish Api will send the 'FINISHED' Staus inside 200
+         * @param {*} _KEY Access Token
+         * @param {*} jobID The job ID
+         * @param {*} finishedContinuation The Function which is called when the finished status was reached
+         */
+        $scope.waitServerStatus = (_KEY, jobID, finishedContinuation) => {
+            $scope.isLoading = 'active';
+            $http.post('https://merchant.wish.com/api/v2/product/get-download-job-status?access_token='+ _KEY + '&job_id=' + jobID)
+            .then((response) => {
+                $scope.serverStatus = serverStati = response.data.data;
+
+                if (serverStati.status == 'FINISHED' || serverStati.status == 'FERTIG') {
+                    finishedContinuation(serverStati);
+                    $scope.contentLoading = true;
+                } else {
+                    $scope.contentLoading = false;
+                    $timeout(() => {
+                        $scope.waitServerStatus(_KEY, jobID, finishedContinuation);
+                    }, 5000);
+                }
+            })
+            .catch((e) => console.log(e));
+        }
+
+        $scope.downloadProductFile = (serverStati) => {
+            $scope.isLoading = '';
+            console.log(serverStati.download_link);
+            if (serverStati.download_link) {
+
+                $scope.contentLoading = true;
+                $http.get(serverStati.download_link)
+                    .then(function(data) {
+                        console.log(data);
+                        $scope.loadedProducts = data;
+                    });
+            }
+        }
+
+        $scope.getData = function (serverStatus) {
+            $scope.searchField = 'Produkte werden geladen ... ' + serverStatus;
+            var _KEY = 'd4c7fbfd7ee448dd82a744a09029bacd';
+            $http.post('https://merchant.wish.com/api/v2/product/create-download-job?access_token='+ _KEY +'&format=json')
+                .then(function(data) {
+                    return $scope.jobID = data.data.data.job_id;
+                })
+                .then(function(data) {
+                    $scope.waitServerStatus(_KEY, $scope.jobID, $scope.downloadProductFile);
+                })
+        };
+
         $scope.clearInput = function () {
-            $scope.searchField = "";
+            $scope.contentLoadedGo = false;
+            $scope.clearInputclicked = true;
+            $scope.searchField = '';
+            $scope.newVal = 'Suche z.B. nach E-Bike günstig';
+        }
+
+        $scope.$on(
+            "$destroy",
+            function(clearInput) {
+                $timeout.cancel(this);
+            }
+        );
+
+        $scope.cancelBuilderServer = function() {
+            $scope.contentLoadedGo = false;
+            $http.post('https://merchant.wish.com/api/v2/product/cancel-download-job?access_token=d4c7fbfd7ee448dd82a744a09029bacd&job_id=' + $scope.jobID)
+            .then(function(response) {
+                console.log('Prozess vorzeitig beendet!');
+            });
         }
 
         $scope.logo =
@@ -79,7 +132,7 @@ app.controller('goennController', [
         /* get the Main Content */
         $http({
             method: 'GET',
-            url: 'data/pawPages.json'
+            url: 'data/goennPages.json'
         }).then(function (response, $anchorScroll) {
             $scope.pages = response.data;
         }, function (error) {
@@ -90,7 +143,7 @@ app.controller('goennController', [
         /* get extended Content */
         $http({
             method: 'GET',
-            url: 'data/pawContent.json'
+            url: 'data/goennContent.json'
         }).then(function (response) {
             $scope.boxes = response.data;
         }, function (error) {
@@ -105,7 +158,7 @@ app.controller('goennController', [
     }
 ])
 
-    .factory('pawService', function () {
+    .factory('goennService', function () {
         return function (data) {
             if (data.length >= 3) {
                 return data;

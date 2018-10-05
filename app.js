@@ -16,18 +16,3 @@ app.config(function ($mdThemingProvider) {
     $mdThemingProvider.theme('dark-purple').backgroundPalette('deep-purple').dark();
     $mdThemingProvider.theme('dark-blue').backgroundPalette('blue').dark();
 });
-
-app.directive("scroll", function ($window) {
-    return function(scope, element, attrs) {
-        angular.element($window).bind("scroll", function() {
-            if (this.pageYOffset >= 66) {
-                scope.boolChangeClass = true;
-                scope.collapsed = false;
-            } else {
-                scope.boolChangeClass = false;
-                scope.collapsed = false;
-            }
-            scope.$apply();
-        });
-    };
-});

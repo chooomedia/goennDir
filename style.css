@@ -2,36 +2,82 @@ body {
   font-family: 'Arimo', sans-serif;
   font-family: 'Lily Script One', cursive;
   font-family: 'Arimo', sans-serif; }
-  body md-menu-bar button {
+  body #goenndirnav .goennDirStyle {
+    background-position-x: 100%;
+    background-repeat: no-repeat;
+    filter: saturate(2);
+    width: 100%;
+    position: absolute;
+    z-index: 2 !important;
+    height: 67px;
+    transition: all .9s; }
+    body #goenndirnav .goennDirStyle:hover {
+      filter: saturate(4); }
+  body #goenndirnav md-menu-bar button {
     font-family: 'Lily Script One';
     font-size: 22px; }
-  body md-menu-bar #search-bar {
+  body #goenndirnav md-menu-bar #search-bar {
     margin-top: 15px;
     margin-left: 10px;
     color: #FFF !important; }
-  body md-menu-bar #search-bar-active, body md-menu-bar .search-bar {
+  body #goenndirnav md-menu-bar #search-bar-active, body #goenndirnav md-menu-bar .search-bar {
     color: #FFF !important;
     background: transparent;
     overflow: hidden; }
-    body md-menu-bar #search-bar-active button md-icon, body md-menu-bar .search-bar button md-icon {
+    body #goenndirnav md-menu-bar #search-bar-active button md-icon, body #goenndirnav md-menu-bar .search-bar button md-icon {
       color: #FFF !important; }
-    body md-menu-bar #search-bar-active input, body md-menu-bar .search-bar input {
+    body #goenndirnav md-menu-bar #search-bar-active input, body #goenndirnav md-menu-bar .search-bar input {
       margin-top: 14px; }
-  body md-menu-bar md-menu {
+  body #goenndirnav md-menu-bar md-menu {
     font-display: initial; }
-    body md-menu-bar md-menu button span {
+    body #goenndirnav md-menu-bar md-menu button span {
       font-size: 14px;
       text-transform: lowercase; }
-    body md-menu-bar md-menu button.searchButton {
+    body #goenndirnav md-menu-bar md-menu button.searchButton {
       color: #FFF !important; }
-      body md-menu-bar md-menu button.searchButton md-icon {
+      body #goenndirnav md-menu-bar md-menu button.searchButton md-icon {
         color: #FFF !important; }
-  body #paw-search {
-    background: rgba(255, 255, 255, 0.2) !important;
-    padding: 0 1em; }
-    body #paw-search .paw-search-input {
+  body .goennShopInfo {
+    background: rgba(50, 50, 50, 0.9);
+    border-radius: 33.5px;
+    padding: 0 18px 0 12px;
+    display: inline-flex;
+    top: 0;
+    right: 2px;
+    z-index: 999;
+    margin: 7px auto;
+    height: 54px;
+    position: fixed; }
+    body .goennShopInfo .md-button {
+      margin: 0 auto !important;
+      min-width: unset !important; }
+    body .goennShopInfo p {
+      line-height: 22px; }
+  body #goennSearch {
+    margin-top: 67px;
+    padding: 0 1em;
+    background-repeat: no-repeat;
+    background-color: rgba(255, 255, 255, 0.1); }
+
+@keyframes image_blur {
+  0%, 100% {
+    -webkit-filter: saturate(0.5);
+    animation-timing-function: ease-in; }
+  50% {
+    -webkit-filter: saturate(3);
+    animation-timing-function: ease-in-out; } }
+    body #goennSearch.goennLoader.active {
+      clear: both;
+      animation: image_blur 8s;
+      animation-iteration-count: infinite;
+      animation-direction: reverse;
+      transition: all .3s; }
+    body #goennSearch p {
+      font-family: 'Lily Script One';
+      color: rgba(255, 255, 255, 0.95); }
+    body #goennSearch .goennSearchInput {
       width: 100%; }
-      body #paw-search .paw-search-input input {
+      body #goennSearch .goennSearchInput input {
         font-family: 'Lily Script One'; }
   body md-list-item .active {
     border: 1pix solid rgba(255, 255, 255, 0.5); }
@@ -146,3 +192,8 @@ body {
   body .checkBoxTop {
     line-height: 40px;
     font-size: 14px; }
+
+/* Media Querys for responsive Smartphone Views */
+@media only screen and (max-width: 599px) {
+  .goennDirStyle {
+    background-size: cover; } }

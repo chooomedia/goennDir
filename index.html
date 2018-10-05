@@ -15,11 +15,12 @@
 
 <body ng-model="main" ng-cloak ng-controller="goennController">
 <div layout="column" layout-filling>
-    <header class="blurred-box">
-        <md-toolbar layout="row" flex>
+    <header>
+        <md-toolbar layout="row" id="goenndirnav" flex>
+            <div class="goennDirStyle" back-img="data/img/goenndir-style-right.png"></div>
             <img ng-src="{{logo.url}}" alt="{{logo.title}}" class="md-logo md-avatar">
             <md-menu-bar layout="row" layout-align="start center">
-                <md-menu ng-repeat="link in links" ng-hide="clicker">
+                <md-menu layout="column" layout-align="start end" ng-repeat="link in links" ng-hide="clicker">
                     <button style="color:#FFF!important;" ng-click="$mdMenu.open()">
                         {{link.title}}
                     </button>
@@ -29,19 +30,45 @@
                 </md-menu>
             </md-menu-bar>
         </md-toolbar>
+        <div class="goennShopInfo">
+            <md-button>
+                <md-tooltip>Wish Merchant Shop Name</md-tooltip>
+                <img width="33" height="33" src="./data/img/wish-merchant-logo-line.png" alt="Wish Merchant Logo"/>
+            </md-button>
+            <p>{{shopName}}</p>
+        </div>
     </header>
 
     <!-- Search bar -->
-    <div class="md-toolbar-tools" layout="row" id="paw-search">
-        <md-button class="md-icon-button" ng-click="getData()">
-            <md-icon>search</md-icon>
+    <div class="md-toolbar-tools goennLoader {{isLoading}}" layout="row" id="goennSearch" back-img="data/img/goenndir-style-left.png">
+            <span class="goennLoaderCircle" ng-hide="!contentLoadedGo" style="
+                background: url(./data/img/loader.gif);
+                background-repeat: no-repeat;
+                background-size: contain;
+                width: 54px;
+                margin: 0 auto;
+                height: 54px;
+                filter: invert(0.78);
+                border-radius: 27px !important;
+                position: absolute;
+                left: 2px;">
+            </span>
+        <md-button style="margin: 0 17px 0 -7px;padding: 0 9px 0 3px;" class="md-icon-button" ng-click="getData(); contentLoadedGo=!contentLoadedGo" aria-label="search">
+            <md-icon ng-if="!contentLoadedGo">search</md-icon>
+            <md-icon ng-if="contentLoadedGo">close</md-icon>
         </md-button>
         <!-- Input Text -->
-        <md-input-container layout="row" class="paw-search-input">
+        <md-input-container layout="row" class="goennSearchInput">
             <!-- <label for="search">Search</label> -->
-            <input type="text" ng-model="searchField" aria-label="search"/>
+            <input ng-hide="contentLoadedGo" type="text" ng-model="searchField" aria-label="search"/>
+            <span ng-show="contentLoadedGo" style="width: 100%;line-height: 67px;">
+                <p ng-show="!clearInputclicked">
+                    Fleissig ... {{serverStatus.status | lowercase}}
+                </p>
+                <p ng-show="clearInputclicked">{{newVal}}</p>
+            </span>
         </md-input-container>
-        <md-button class="md-icon-button" ng-click="clearInput()">
+        <md-button class="md-icon-button" ng-click="clearInput(); cancelBuilderServer()">
             <md-icon>close</md-icon>
         </md-button>
     </div>
@@ -93,6 +120,7 @@
 <!-- Angular Directives -->
 <script src="directives/goennBoxes.js"></script>
 <script src="directives/goennPages.js"></script>
+<script src="directives/goennBackgr.js"></script>
 
 </body>
 </html>
