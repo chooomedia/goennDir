@@ -44,9 +44,9 @@
             <md-toolbar class="md-theme-indigo goennSideNav" style="height: 67px;background-color: rgba(0,0,0,0.1) !important;">
             </md-toolbar>
             <md-content layout-padding ng-controller="LeftCtrl">
-                <button ng-click="close()" class="md-primary" hide-gt-md>
+                <md-button ng-click="close()" class="md-primary" hide-gt-md>
                 Close Sidenav Left
-                </button>
+                </md-button>
                 <p hide show-gt-md>
                 This sidenav is locked open on your device. To go back to the default behavior,
                 narrow your display.
@@ -94,9 +94,9 @@
                 <p ng-show="clearInputclicked">{{newVal}}</p>
             </span>
         </md-input-container>
-        <button class="md-icon-button" ng-click="clearInput(); cancelBuilderServer()">
+        <md-button class="md-icon-button" ng-click="clearInput(); cancelBuilderServer()">
             <md-icon>close</md-icon>
-        </button>
+        </md-button>
     </div>
 
     <div class="main">

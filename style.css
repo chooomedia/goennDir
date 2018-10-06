@@ -3,7 +3,8 @@ body {
   font-family: 'Lily Script One', cursive;
   font-family: 'Arimo', sans-serif; }
   body h3 {
-    font-family: 'Lily Script One'; }
+    font-family: 'Lily Script One';
+    font-size: 18px; }
   body #goenndirnav {
     position: absolute;
     height: 67px; }
@@ -55,7 +56,7 @@ body {
     body .goennShopInfo p {
       line-height: 22px; }
   body #goennSearch {
-    background-size: cover !important; }
+    background-size: initial !important; }
     body #goennSearch #search-bar-active, body #goennSearch .search-bar {
       color: #FFF !important;
       background: transparent;

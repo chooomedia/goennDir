@@ -15,6 +15,8 @@ app.controller('goennController', [
         $mdSidenav,
         $location,
         goennService) {
+            
+            $scope.title = "gönndir.online - schnell und sparsicher";
 
             $scope.toggleLeft = buildDelayedToggler('left');
             $scope.toggleRight = buildToggler('right');
@@ -106,8 +108,8 @@ app.controller('goennController', [
             
             console.log(serverStati.download_link);
             if (serverStati.download_link) {
-                return $scope.contentLoadedGo = false;
-                $http.get(serverStati.download_link)
+                $scope.contentLoadedGo = false;
+                $http.get(serverStati.download_link+ '&format=json')
                     .then(function(data) {
                         console.log(data);
                         $scope.loadedProducts = data;
