@@ -1,9 +1,11 @@
-<html lang="de" ng-app="goennDir" ng-cloak>
+
+<!DOCTYPE html>
+<html lang="de" ng-app="goennDir">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Angular Material style sheet -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.1.8/angular-material.min.css">
+    <link rel="stylesheet" href="md.min.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <title>{{title}}</title>
     <script>
@@ -11,10 +13,9 @@
     </script>
     <link type="text/css" href="style.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Arimo|Lily+Script+One" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Arimo" rel="stylesheet">
 </head>
 
-<body ng-model="main" ng-controller="goennController">
+<body ng-model="main" ng-controller="goennController" ng-cloak>
 
 <div layout="column" layout-filling>
     <header>
@@ -99,7 +100,7 @@
         </md-button>
     </div>
 
-    <section class="main">
+    <section class="main" ng-cloak>
         <!-- <section class="landingpage" layout="row" layout-wrap>
             <app-page ng-repeat="page in pages" content="page"></app-page>
         </section> -->
