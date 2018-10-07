@@ -15,6 +15,20 @@ app.controller('goennController', [
         $mdSidenav,
         $location,
         goennService) {
+
+            getWishFeedData = function() {
+                $http.get('https://www.wish.com/search/grinder')
+                .then(function(response) {
+                    console.log(respsonse);
+                if (respsonse) {
+                    console.log('Success connected to Wish Api Feed!');
+                } else {
+                    console.log('Error -  no connection to Wish Api Feed!')
+                }
+                });
+            }
+
+            getWishFeedData();
             
             $scope.title = "gönndir.online - schnell und sparsicher";
 
