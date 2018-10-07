@@ -3,6 +3,8 @@ app.directive('backImg', function(){
         var url = attrs.backImg;
         element.css({
             'background-image': 'url(' + url +')',
+            'background-size': 'cover',
+            'background-repeat': 'no-repeat'
         });
     };
 });

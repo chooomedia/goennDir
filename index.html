@@ -100,16 +100,30 @@
     </div>
 
     <section class="main">
-        <section class="landingpage" layout="row" layout-wrap>
-            <!-- <app-page ng-repeat="page in pages" content="page"></app-page> -->
+        <!-- <section class="landingpage" layout="row" layout-wrap>
+            <app-page ng-repeat="page in pages" content="page"></app-page>
+        </section> -->
+        <section layout="row" layout-sm="column">
+            <div flex class="goenn50" back-img="data/img/goenndir-pexels-autumn.jpg">
+                <div class="goennSlogan">
+                    <md-icon>done</md-icon>
+                    <h2>Egogönnung</h2>
+                </div>
+            </div>
+            <div flex class="goenn50" back-img="data/img/goenndir-pexels-autumn-group-humans-lucky.jpg">
+                <div class="goennSlogan">
+                    <md-icon>autorenew</md-icon>
+                    <h2>Gruppengönnung</h2>
+                </div>
+            </div>
         </section>
-        <section layout="column" layout-wrap>
-            <md-content flex class="goenn50">
-                <img src="http://placehold.it/600x300" alt="placehold">
-            </md-content>
-            <md-content flex class="goenn50">
-                <img src="http://placehold.it/600x300" alt="placehold">
-            </md-content>
+
+        <section layout="row" layout-sm="column">
+            <div class="goennBanner" back-img="data/img/goenndir-style-left.png" flex>
+                <div layout="column" back-img="data/img/goenndir-style-right.png" class="goennBannerContent" flex>
+                    bestelle jetzt und erhalte eine herbstliches Geschenk gratis!*
+                </div>
+            </div>
         </section>
 
         <!-- md-content layout="row" ng-view ng-show="collapsed">
