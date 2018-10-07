@@ -1,4 +1,4 @@
-app.directive('goennPages', function() {
+app.directive('goennProducts', function() {
 
     return {
          restrict: 'E',

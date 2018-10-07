@@ -109,27 +109,30 @@
                 <div class="goennSlogan">
                     <md-icon>done</md-icon>
                     <h2>Gönnung</h2>
-                    <p>jetzt Schnäppchen sichern und Versand sparen.</p>
+                    <p>jetzt Schnäppchen sichern und Versand sparen</p>
                 </div>
             </div>
             <div flex class="goenn50" back-img="data/img/goenndir-pexels-autumn-group-humans-lucky.jpg">
                 <div class="goennSlogan">
                     <md-icon>cake</md-icon>
                     <h2>Gruppengönnung</h2>
-                    <p>jetzt z.B. für Fesitvals für die Gruppe vorsorgen.</p>
+                    <p>jetzt z.B. für Fesitvals für die Gruppe vorsorgen</p>
                 </div>
             </div>
         </section>
 
-        <section layout="row" layout-sm="column">
-            <div class="goennBanner" back-img="data/img/goenndir-style-left.png" flex>
+        <section layout="row" layout-sm="column" ng-clock>
+            <md-content class="goennBanner" back-img="data/img/goenndir-style-left.png" flex>
+                <md-progress-linear md-mode="indeterminate" ng-value="33"></md-progress-linear>
                 <div layout="column" class="goennBannerContent" flex>
-                    <p>page in build Progress! stay tuned!</p>
-                    <md-button flex href="https://www.facebook.com/goenndir.online.team" class="md-fab md-button md-ink-ripple" type="button" aria-label="Facebook">
-                        <md-icon>thumb_up_alt</md-icon>
-                    </md-button>
+                    <p>Webshop wird gerade gönnerhaft entwickelt
+                        <md-button href="https://www.facebook.com/goenndir.online.team" target="_blank">
+                            <md-tooltip md-direction="top">Gönndir.online auf Facebook besuchen</md-tooltip>
+                            <md-icon >thumb_up</md-icon>
+                        </md-button>
+                    </p>
                 </div>
-            </div>
+            </md-content>
         </section>
 
         <!-- md-content layout="row" ng-view ng-show="collapsed">
@@ -148,7 +151,7 @@
                 </md-content>
             </md-content>
             <div ng-repeat="box in boxes" class="slide md-padding" flex="33" flex-xs="100">
-                <app-box info="box"></app-box>
+                <goenn-box info="box"></goenn-box>
             </div>
         </md-content> -->
     </section>
@@ -174,6 +177,7 @@
 <script src="directives/goennBoxes.js"></script>
 <script src="directives/goennPages.js"></script>
 <script src="directives/goennBackgr.js"></script>
+<script src="directives/goennProducts.js"></script>
 
 </body>
 </html>

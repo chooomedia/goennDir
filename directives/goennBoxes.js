@@ -1,4 +1,4 @@
-app.directive('appBox', function() {
+app.directive('goennBox', function() {
     return {
         restrict: 'E',
         scope: {
