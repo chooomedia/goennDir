@@ -99,9 +99,17 @@
         </md-button>
     </div>
 
-    <div class="main">
-        <section class="landingpage" layout="row" ng-repeat="page in pages" layout-wrap>
-            <app-page content="page"></app-page>
+    <section class="main">
+        <section class="landingpage" layout="row" layout-wrap>
+            <!-- <app-page ng-repeat="page in pages" content="page"></app-page> -->
+        </section>
+        <section layout="column" layout-wrap>
+            <md-content flex class="goenn50">
+                <img src="http://placehold.it/600x300" alt="placehold">
+            </md-content>
+            <md-content flex class="goenn50">
+                <img src="http://placehold.it/600x300" alt="placehold">
+            </md-content>
         </section>
 
         <!-- md-content layout="row" ng-view ng-show="collapsed">
@@ -123,7 +131,7 @@
                 <app-box info="box"></app-box>
             </div>
         </md-content> -->
-    </div>
+    </section>
 </div>
 
 <!-- Angular Material requires Angular.js Libraries -->
